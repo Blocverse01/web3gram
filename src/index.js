@@ -1,17 +1,27 @@
 import React from "react";
 import { BrowserRouter } from "react-router-dom";
-import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import Moralis from "moralis";
+import { createRoot } from "react-dom/client";
 
-ReactDOM.render(
+const serverUrl = process.env.REACT_APP_MORALIS_SERVER_URL;
+const appId = process.env.REACT_APP_MORALIS_APP_ID;
+console.log(serverUrl, appId);
+Moralis.start({
+  serverUrl,
+  appId,
+});
+
+const container = document.getElementById("root");
+const root = createRoot(container);
+root.render(
   <React.StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

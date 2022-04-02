@@ -7,3 +7,9 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+@layer base {
+  .btn {
+    @apply px-3 py-3 bg-portfolio-skyblue text-slate-800 font-bold uppercase rounded-md hover:bg-blue-300;
+  }
+}

@@ -1,17 +1,20 @@
-import joshdamian from "./images/joshdamian.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { solid } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { Outlet, useMatch, useResolvedPath } from "react-router-dom";
 import CustomLink from "./components/CustomLink";
 import Tilt from "react-parallax-tilt";
+import Moralis from "moralis";
 
 function Layout() {
   let resolved = useResolvedPath("/");
   let match = useMatch({ path: resolved.pathname, end: true });
+  let user = Moralis.User.current();
   return (
     <div className="text-white leading-normal bg-gradient">
       <aside
         className={`${
           match ? "rounded-bl-[110px]" : "sticky top-0"
-        } md:fixed md:rounded-bl-none md:inset-0 z-50 md:w-36 bg-[#000000]`}
+        } md:fixed md:rounded-bl-none md:inset-0 z-50 md:w-48 bg-[#000000]`}
         data-aos="fade-right"
       >
         <div
@@ -22,13 +25,15 @@ function Layout() {
           } px-5 md:py-8 md:flex-col flex gap-x-[20px] gap-y-[20px] md:border-b-0 md:items-start`}
         >
           <Tilt>
-            <img
-              src={joshdamian}
-              alt="josh"
-              className={`${
-                match ? "w-[160px] mx-auto" : "w-[45px]"
-              } rounded-full md:mx-auto  md:w-full`}
-            />
+            <div
+              className={`text-white  ${
+                match
+                  ? "text-[35px] text-center justify-center"
+                  : "justify-start text-[17px]"
+              } md:text-[85px] flex md:justify-center`}
+            >
+              <FontAwesomeIcon icon={solid("camera")} />
+            </div>
           </Tilt>
           <div>
             <h3
@@ -36,14 +41,7 @@ function Layout() {
                 match ? "text-[25px] text-center" : "text-[17px]"
               } md:text-center`}
             >
-              Josh
-            </h3>
-            <h3
-              className={`text-portfolio-gray mt-1 text-[14px] ${
-                match ? "text-center" : ""
-              } md:text-center`}
-            >
-              Software Developer
+              Web3Gram
             </h3>
           </div>
         </div>
@@ -54,22 +52,22 @@ function Layout() {
           >
             Home
           </CustomLink>
-          <CustomLink
+          {/*  <CustomLink
             to="/about"
             className="text-slate-300 w-1/3 md:w-full flex items-center h-[inherit] hover:text-portfolio-skyblue hover:font-bold transition-all duration-1000 ease-in-out  justify-center flex-shrink-0 py-2 md:py-4 px-3"
           >
             About
-          </CustomLink>
+          </CustomLink> */}
           <CustomLink
-            to="/contact"
+            to={user ? "/rooms/" + user.get("ethAddress") : "/rooms/create"}
             className="text-slate-300 w-1/3 md:w-full h-[inherit] flex items-center justify-center py-2 md:py-4 hover:text-portfolio-skyblue hover:font-bold transition-all duration-1000 ease-in-out flex-shrink-0 px-3"
           >
-            Contact
+            {user ? "My Web3Gram" : "Create My Web3Gram"}
           </CustomLink>
           <button className="hidden md:block w-full"></button>
         </div>
       </aside>
-      <main className="md:ml-36 text-[#515152] pb-[48px] md:pb-0 bg-[#000000]">
+      <main className="md:ml-48 text-[#515152] pb-[48px] md:pb-0 bg-[#000000]">
         <Outlet />
       </main>
     </div>
