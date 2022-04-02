@@ -69,7 +69,7 @@ export default function Room() {
             ) : (
               ""
             )}
-            <div className="grid grid-cols-1 mt-5 sm:grid-cols-2 gap-16 md:grid-cols-3">
+            <div className="grid grid-cols-1 mt-5 mb-12 sm:grid-cols-2 gap-16 md:grid-cols-3">
               {images.map((image, index) => (
                 <a
                   key={index}
