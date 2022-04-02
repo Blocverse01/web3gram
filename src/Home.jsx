@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 /* import Moralis from "moralis"; */
 import memories from "./images/Couple-in-a-photo-booth-bro.svg";
 import { connectWallet } from "./utils/web3User";
