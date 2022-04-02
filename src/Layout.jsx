@@ -35,7 +35,7 @@ function Layout() {
               <FontAwesomeIcon icon={solid("camera")} />
             </div>
           </Tilt>
-          <div className="mt-16 md:mt-0">
+          <div>
             <h3
               className={`text-white font-semibold ${
                 match ? "text-[25px] text-center" : "text-[17px]"
