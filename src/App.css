@@ -1,0 +1,24 @@
+.hero {
+  color: white;
+}
+
+.bottom-shadow {
+  box-shadow: 5px 8px 5px -5px skyblue;
+}
+
+.bg-gradient {
+  background-color: #1b2845;
+  background-image: linear-gradient(315deg, #1b2845 0%, #274060 74%);
+}
+
+.clip-message {
+  clip-path: polygon(
+    0% 0%,
+    100% 0%,
+    100% 75%,
+    75% 75%,
+    75% 100%,
+    50% 75%,
+    0% 75%
+  );
+}
