@@ -76,7 +76,7 @@ export default function Room() {
                   className="shadow-md border-slate-400 block rounded-md border"
                   href={image.imageLink}
                 >
-                  <div className="flex justify-center h-full items-center p-3">
+                  <div className="flex justify-center h-full items-center md:p-3">
                     <img
                       className="w-full object-scale-down h-full"
                       src={image.imageLink}
