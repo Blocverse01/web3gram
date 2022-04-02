@@ -44,7 +44,7 @@ export default function UploadImage() {
               <div className="text-white cursor-pointer">
                 {gram.file ? (
                   <div className="relative">
-                    <div className="bg-black absolute bg-opacity-40 z-10 inset-0 h-[240px] sm:h-[370px] flex items-center justify-center">
+                    <div className="bg-black p-4 absolute bg-opacity-40 z-10 inset-0 h-[240px] sm:h-[370px] flex items-center justify-center">
                       <div>
                         <div className="text-center">
                           <FontAwesomeIcon
@@ -65,7 +65,7 @@ export default function UploadImage() {
                     />
                   </div>
                 ) : (
-                  <div className="py-[24px] bg-gray-800">
+                  <div className="py-[24px] px-4 bg-gray-800">
                     <div className="text-center">
                       <FontAwesomeIcon
                         icon={solid("image")}
