@@ -69,14 +69,14 @@ export default function Room() {
             ) : (
               ""
             )}
-            <div className="grid grid-cols-1 mt-5 sm:grid-cols-2 gap-16 md:grid-cols-3">
+            <div className="grid grid-cols-1 mt-5 mb-12 sm:grid-cols-2 gap-16 md:grid-cols-3">
               {images.map((image, index) => (
                 <a
                   key={index}
                   className="shadow-md border-slate-400 block rounded-md border"
                   href={image.imageLink}
                 >
-                  <div className="flex justify-center h-full items-center p-3">
+                  <div className="flex justify-center h-full md:items-center md:p-3">
                     <img
                       className="w-full object-scale-down h-full"
                       src={image.imageLink}
