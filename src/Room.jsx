@@ -48,7 +48,7 @@ export default function Room() {
         ) : (
           <div>
             <h3 className="text-white md:text-center font-black uppercase mb-10 md:mb-20 text-3xl md:text-[3.6rem]">
-              <span className="text-portfolio-skyblue">
+              <span className="text-portfolio-skyblue truncate">
                 {myRoom ? "My Web3Gram" : address}
               </span>
             </h3>

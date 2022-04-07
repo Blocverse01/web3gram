@@ -30,10 +30,5 @@ export const fetchRoomImages = (roomAddress) => {
     }));
     console.log(roomImages);
     return roomImages;
-
-    /*  const ipfs = application.get("resume").ipfs();
-    const hash = application.get("resume").hash();
-    console.log("IPFS url", ipfs);
-    console.log("IPFS hash", hash); */
   });
 };
