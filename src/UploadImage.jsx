@@ -36,7 +36,7 @@ export default function UploadImage() {
           <label className="block mb-2">Image File</label>
           <FileUploader
             value={gram.file}
-            handleChange={(file) =>
+            onChange={(file) =>
               handleChange({ target: { name: "file", value: file } })
             }
             types={fileTypes}
