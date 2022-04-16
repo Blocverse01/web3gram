@@ -9,7 +9,7 @@ const fileTypes = ["JPG", "PNG", "GIF", "SVG"];
 export default function UploadImage() {
   const [inputValue, setInputValue] = useState({
     caption: "",
-    file: "",
+    media: null,
   });
   const gram = inputValue;
   const handleChange = (e) => {
@@ -35,14 +35,14 @@ export default function UploadImage() {
         <div>
           <label className="block mb-2">Image File</label>
           <FileUploader
-            value={gram.file}
-            onChange={(file) =>
-              handleChange({ target: { name: "file", value: file } })
+            value={gram.media}
+            handleChange={(file) =>
+              handleChange({ target: { name: "media", value: file } })
             }
             types={fileTypes}
             children={
               <div className="text-white cursor-pointer">
-                {gram.file ? (
+                {gram.media ? (
                   <div className="relative">
                     <div className="bg-black p-4 absolute bg-opacity-40 z-10 inset-0 h-[240px] sm:h-[370px] flex items-center justify-center">
                       <div>
@@ -59,7 +59,7 @@ export default function UploadImage() {
                       </div>
                     </div>
                     <img
-                      src={URL.createObjectURL(gram.file)}
+                      src={URL.createObjectURL(gram.media)}
                       className="h-[240px] sm:h-[370px] object-cover w-full"
                       alt="Thumb"
                     />
@@ -88,7 +88,7 @@ export default function UploadImage() {
           <button
             className="btn"
             onClick={() => {
-              uploadImage(gram.file, gram.caption);
+              uploadImage(gram.media, gram.caption);
             }}
           >
             Upload Me 🚀
