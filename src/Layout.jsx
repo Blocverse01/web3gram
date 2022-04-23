@@ -60,7 +60,7 @@ function Layout() {
           </CustomLink> */}
           <CustomLink
             to={user ? "/rooms/" + user.get("ethAddress") : "/rooms/create"}
-            className="text-slate-300 w-1/2 md:w-full h-[inherit] flex items-center justify-center py-2 md:py-4 hover:text-portfolio-skyblue hover:font-bold transition-all duration-1000 ease-in-out flex-shrink-0 px-3"
+            className="text-slate-300 w-1/2 md:w-full h-[inherit] flex items-center text-center justify-center py-2 md:py-4 hover:text-portfolio-skyblue hover:font-bold transition-all duration-1000 ease-in-out flex-shrink-0 px-3"
           >
             {user ? "My Web3Gram" : "Create My Web3Gram"}
           </CustomLink>
